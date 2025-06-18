@@ -1,11 +1,18 @@
-# Use OpenJDK as base image
+# Use a JDK base image
 FROM eclipse-temurin:21-jdk-alpine
 
-# Set app directory
+# Set working directory
 WORKDIR /app
 
-# Copy JAR file
-COPY build/libs/to-do-list-0.0.1-SNAPSHOT.jar app.jar
+# Copy Gradle files first (for caching)
+COPY gradlew .
+COPY gradle gradle
+COPY build.gradle .
+COPY settings.gradle .
+COPY src src
 
-# Run the app
-ENTRYPOINT ["java", "-jar", "app.jar"]
+# Build the JAR
+RUN ./gradlew clean build
+
+# Run the JAR
+CMD ["java", "-jar", "build/libs/to-do-list-0.0.1-SNAPSHOT.jar"]
