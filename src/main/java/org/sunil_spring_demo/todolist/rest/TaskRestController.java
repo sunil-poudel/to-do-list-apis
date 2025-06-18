@@ -37,5 +37,10 @@ public class TaskRestController {
         taskDAO.saveOrUpdateTask(task);
     }
 
+    @DeleteMapping("/tasks/{id}")
+    public String delete(@PathVariable int id){
+        return taskDAO.deleteTask(id);
+    }
+
 
 }
