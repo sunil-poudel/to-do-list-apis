@@ -13,10 +13,4 @@ public class ToDoListApplication {
         SpringApplication.run(ToDoListApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner commandLineRunner(TaskDAO taskDAO){
-        return runner -> {
-            System.out.println(taskDAO.getAllTasks());
-        };
-    }
 }
