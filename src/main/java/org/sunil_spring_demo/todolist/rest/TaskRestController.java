@@ -7,6 +7,7 @@ import org.sunil_spring_demo.todolist.entity.Task;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/apis")
 public class TaskRestController {
