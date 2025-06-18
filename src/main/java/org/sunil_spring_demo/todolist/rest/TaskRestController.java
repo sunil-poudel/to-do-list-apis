@@ -26,9 +26,6 @@ public class TaskRestController {
         return taskDAO.getTaskById(id);
     }
 
-    @PostMapping("/tasks")
-    public void addNewTask(@RequestBody Task task){
-        taskDAO.addNewTask(task);
-    }
+
 
 }

@@ -31,9 +31,5 @@ public class TaskDAOImpl implements TaskDAO{
         return entityManager.find(Task.class, id);
     }
 
-    @Transactional
-    @Override
-    public void addNewTask(Task task) {
-        entityManager.persist(task);
-    }
+
 }
