@@ -27,6 +27,6 @@ public class TaskDAOImpl implements TaskDAO{
 
     @Override
     public Task getTaskById(int id) {
-        return null;
+        return entityManager.find(Task.class, id);
     }
 }
