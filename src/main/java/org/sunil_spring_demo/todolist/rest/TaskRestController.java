@@ -1,10 +1,7 @@
 package org.sunil_spring_demo.todolist.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.sunil_spring_demo.todolist.dao.TaskDAO;
 import org.sunil_spring_demo.todolist.entity.Task;
 
@@ -28,4 +25,10 @@ public class TaskRestController {
     public Task getTaskById(@PathVariable int id){
         return taskDAO.getTaskById(id);
     }
+
+    @PostMapping("/tasks")
+    public void addNewTask(@RequestBody Task task){
+        taskDAO.addNewTask(task);
+    }
+
 }

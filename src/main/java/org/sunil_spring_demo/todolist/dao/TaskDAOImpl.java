@@ -4,6 +4,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import org.sunil_spring_demo.todolist.entity.Task;
 
 import java.util.List;
@@ -28,5 +29,11 @@ public class TaskDAOImpl implements TaskDAO{
     @Override
     public Task getTaskById(int id) {
         return entityManager.find(Task.class, id);
+    }
+
+    @Transactional
+    @Override
+    public void addNewTask(Task task) {
+        entityManager.persist(task);
     }
 }
