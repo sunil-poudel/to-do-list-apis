@@ -26,6 +26,11 @@ public class TaskRestController {
         return taskDAO.getTaskById(id);
     }
 
+    @PostMapping("/tasks")
+    public void save(@RequestBody Task task){
+        task.setId(0);
+        taskDAO.saveOrUpdate(task);
+    }
 
 
 }

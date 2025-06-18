@@ -24,6 +24,20 @@ public class Task {
 
     }
 
+    public Task(String title, String date, String description) {
+        this.title = title;
+        this.date = date;
+        Description = description;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getTitle() {
         return title;
     }
