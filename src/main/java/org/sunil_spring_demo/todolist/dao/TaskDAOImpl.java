@@ -31,5 +31,10 @@ public class TaskDAOImpl implements TaskDAO{
         return entityManager.find(Task.class, id);
     }
 
+    @Override
+    public void saveOrUpdate(Task task) {
+        entityManager.merge(task);
+    }
+
 
 }
