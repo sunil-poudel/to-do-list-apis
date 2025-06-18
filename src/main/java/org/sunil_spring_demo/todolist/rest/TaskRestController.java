@@ -29,12 +29,12 @@ public class TaskRestController {
     @PostMapping("/tasks")
     public void save(@RequestBody Task task){
         task.setId(0);
-        taskDAO.saveOrUpdate(task);
+        taskDAO.saveOrUpdateTask(task);
     }
 
     @PutMapping("/tasks")
     public void update(@RequestBody Task task){
-        taskDAO.saveOrUpdate(task);
+        taskDAO.saveOrUpdateTask(task);
     }
 
 
