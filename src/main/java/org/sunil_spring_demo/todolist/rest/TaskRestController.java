@@ -32,5 +32,10 @@ public class TaskRestController {
         taskDAO.saveOrUpdate(task);
     }
 
+    @PutMapping("/tasks")
+    public void update(@RequestBody Task task){
+        taskDAO.saveOrUpdate(task);
+    }
+
 
 }
