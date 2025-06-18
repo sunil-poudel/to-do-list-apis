@@ -32,6 +32,7 @@ public class TaskDAOImpl implements TaskDAO{
     }
 
     @Override
+    @Transactional
     public void saveOrUpdate(Task task) {
         entityManager.merge(task);
     }
