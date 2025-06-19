@@ -7,6 +7,6 @@ import java.util.List;
 public interface TaskDAO {
     List<Task> getAllTasks();
     Task getTaskById(int id);
-    void saveOrUpdateTask(Task task);
+    Task saveOrUpdateTask(Task task);
     String deleteTask(int id);
 }

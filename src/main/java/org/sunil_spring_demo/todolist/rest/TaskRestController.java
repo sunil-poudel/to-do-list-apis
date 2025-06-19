@@ -28,9 +28,9 @@ public class TaskRestController {
     }
 
     @PostMapping("/tasks")
-    public void save(@RequestBody Task task){
+    public Task save(@RequestBody Task task){
         task.setId(0);
-        taskDAO.saveOrUpdateTask(task);
+        return taskDAO.saveOrUpdateTask(task);
     }
 
     @PutMapping("/tasks")
