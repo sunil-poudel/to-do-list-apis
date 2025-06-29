@@ -45,5 +45,15 @@ public class TaskDAOImpl implements TaskDAO{
         return task;
     }
 
+    @Override
+    public Task archiveTask(Task task) {
+        return null;
+    }
+
+    @Override
+    public Task unArchiveTask(Task task) {
+        return null;
+    }
+
 
 }

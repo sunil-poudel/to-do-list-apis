@@ -9,4 +9,6 @@ public interface TaskDAO {
     Task getTaskById(int id);
     Task saveOrUpdateTask(Task task);
     Task deleteTask(int id);
+    Task archiveTask(Task task);
+    Task unArchiveTask(Task task);
 }
