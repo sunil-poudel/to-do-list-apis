@@ -35,7 +35,7 @@ public class TaskRestController {
 
     @PutMapping("/tasks")
     public Task update(@RequestBody Task task){
-    return taskDAO.saveOrUpdateTask(task);
+        return taskDAO.saveOrUpdateTask(task);
     }
 
     @DeleteMapping("/tasks/{id}")

@@ -8,5 +8,5 @@ public interface TaskDAO {
     List<Task> getAllTasks();
     Task getTaskById(int id);
     Task saveOrUpdateTask(Task task);
-    String deleteTask(int id);
+    Task deleteTask(int id);
 }

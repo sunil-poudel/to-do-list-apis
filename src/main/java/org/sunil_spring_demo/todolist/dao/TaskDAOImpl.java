@@ -39,10 +39,10 @@ public class TaskDAOImpl implements TaskDAO{
 
     @Transactional
     @Override
-    public String deleteTask(int id) {
+    public Task deleteTask(int id) {
         Task task = entityManager.find(Task.class, id);
         entityManager.remove(task);
-        return "Deleted task of id: "+id;
+        return task;
     }
 
 
