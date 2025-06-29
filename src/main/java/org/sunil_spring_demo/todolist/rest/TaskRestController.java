@@ -39,7 +39,7 @@ public class TaskRestController {
     }
 
     @DeleteMapping("/tasks/{id}")
-    public String delete(@PathVariable int id){
+    public Task delete(@PathVariable int id){
         return taskDAO.deleteTask(id);
     }
 
